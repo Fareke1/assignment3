@@ -8,7 +8,11 @@ const app = express();
 const server = http.createServer(app);
 
 
-// Connect to MongoDB
+app.use(express.static(__dirname));
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
 
 
 

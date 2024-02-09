@@ -31,6 +31,7 @@ async function getBlogs(){
 }
 
 async function postBlogs(name,age,email){
+    console.log(`${name}${age}${email}`)
     try{
         if(!name || !age || !email){
             throw new Error('Missing required parametres')
@@ -39,9 +40,9 @@ async function postBlogs(name,age,email){
         const collection=database.collection("blogs");
 
         const result= await collection.insertOne({name,age,email});
-
-        if(result && result.insertedCount > 0){
-            const insertedBlog=console.log('You successfully created blog')
+        console.log(result)
+        if(result.acknowledged){
+            console.log('You successfully created blog')
         }
         else{
             throw Error("No document inserted")

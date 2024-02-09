@@ -6,10 +6,37 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
-        <input type="text" placeholder="name">
-        <input type="text" placeholder="age">
-        <input type="email" placeholder="email">
-    </form>
+    <h1>RESTful API Interaction</h1>
+    
+    <h2>GET Request</h2>
+    <button  id="get">Send GET Request</button>
+    <p id="getResponse"></p>
+    
+    <h2>POST Request</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+    <label for="age">Age:</label>
+    <input type="text" id="age">
+    <label for="email">Email:</label>
+    <input type="text" id="email">
+    <button id="post">Submit</button>
+    <p id="postResponse"></p>
+    
+    <h2>PUT Request</h2>
+    <label for="putName">Name:</label>
+    <input type="text" id="putName">
+    <label for="putAge">Age:</label>
+    <input type="text" id="putAge">
+    <label for="putEmail">Email:</label>
+    <input type="text" id="putEmail">
+    <button id="put">Submit</button>
+    <p id="putResponse"></p>
+    
+    <h2>DELETE Request</h2>
+    <label for="deleteName">Name:</label>
+    <input type="text" id="deleteName">
+    <button id="delete">Submit</button>
+    <p id="deleteResponse"></p>
 </body>
+<script src="./index.js"></script>
 </html>
