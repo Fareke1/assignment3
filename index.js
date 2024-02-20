@@ -14,11 +14,38 @@ async function sendGETRequest() {
     try {
         const response = await fetch('http://localhost:3005/api/getBlogs');
         const data = await response.json();
-        document.getElementById('getResponse').innerText = JSON.stringify(data);
+        
+  
+        document.getElementById('getResponse').innerHTML = '';
+        
+     
+        const listContainer = document.createElement('div');
+        
+    
+        for (const item of data) {
+            const itemDiv = document.createElement('div');
+            itemDiv.style.padding = '10px';
+            itemDiv.style.marginBottom = '5px';
+            itemDiv.style.border = '1px solid #ddd';
+            itemDiv.style.borderRadius = '5px';
+            itemDiv.style.backgroundColor = '#f9f9f9';
+            
+          
+            itemDiv.innerHTML = `<strong>Name:</strong> ${item.name}<br>` +
+                                `<strong>Age:</strong> ${item.age}<br>` +
+                                `<strong>Email:</strong> ${item.email}`;
+            
+         
+            listContainer.appendChild(itemDiv);
+        }
+        
+     
+        document.getElementById('getResponse').appendChild(listContainer);
     } catch (error) {
         console.error('Error:', error);
     }
 }
+
 
 async function sendPOSTRequest() {
     const name = document.getElementById('name').value;
